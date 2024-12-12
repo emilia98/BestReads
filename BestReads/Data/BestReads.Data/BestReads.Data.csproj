@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BestReads.Data.Models\BestReads.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>
