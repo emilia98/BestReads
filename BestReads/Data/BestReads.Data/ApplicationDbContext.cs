@@ -3,6 +3,7 @@ using BestReads.Data.Configurations;
 using BestReads.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace BestReads.Data
@@ -10,8 +11,12 @@ namespace BestReads.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, int>
     {
         private static readonly MethodInfo SetIsDeletedQueryFilterMethod =
-            typeof(ApplicationDbContext).GetMethod(nameof(SetIsDeletedQueryFilterMethod),
+            typeof(ApplicationDbContext).GetMethod(nameof(SetIsDeletedQueryFilter),
                 BindingFlags.NonPublic | BindingFlags.Static);
+
+        
+        public ApplicationDbContext() : base()
+        { } 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
