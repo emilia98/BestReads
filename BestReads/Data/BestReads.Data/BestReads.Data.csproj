@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\BestReads.Helpers\BestReads.Helpers.csproj" />
     <ProjectReference Include="..\BestReads.Data.Models\BestReads.Data.Models.csproj" />
   </ItemGroup>
 

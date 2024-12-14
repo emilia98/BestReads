@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestReads.Data", "Data\Best
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestReads.Data.Models", "Data\BestReads.Data.Models\BestReads.Data.Models.csproj", "{4288B38C-E5A4-4961-9BE7-BDE38392DA6B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BC4A9A8F-9960-4B04-A646-3EA78730CFF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestReads.Helpers", "Common\BestReads.Helpers\BestReads.Helpers.csproj", "{FBFAAC64-5137-40D4-B22F-B557991A485D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{4288B38C-E5A4-4961-9BE7-BDE38392DA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4288B38C-E5A4-4961-9BE7-BDE38392DA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4288B38C-E5A4-4961-9BE7-BDE38392DA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBFAAC64-5137-40D4-B22F-B557991A485D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFAAC64-5137-40D4-B22F-B557991A485D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFAAC64-5137-40D4-B22F-B557991A485D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFAAC64-5137-40D4-B22F-B557991A485D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{E4638400-FB4A-48E8-A76A-72B229FD1B00} = {3F4C58D7-DFCC-40E8-B4F1-1992FE7AC5D6}
 		{63F2B1F8-A4D8-4432-856A-6E31860D4091} = {3F4C58D7-DFCC-40E8-B4F1-1992FE7AC5D6}
 		{4288B38C-E5A4-4961-9BE7-BDE38392DA6B} = {3F4C58D7-DFCC-40E8-B4F1-1992FE7AC5D6}
+		{FBFAAC64-5137-40D4-B22F-B557991A485D} = {BC4A9A8F-9960-4B04-A646-3EA78730CFF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FABF4AD7-056E-46EF-96F2-D697DD033A41}

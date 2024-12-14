@@ -3,6 +3,7 @@ using BestReads.Data.Common;
 using BestReads.Data.Common.Repositories;
 using BestReads.Data.Models;
 using BestReads.Data.Repositories;
+using BestReads.Data.Seeding;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -59,6 +60,19 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+}
+
+using (var serviceScope = app.Services.CreateScope())
+{
+    var serviceProvider = serviceScope.ServiceProvider;
+    var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
+    await new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceProvider);
+
+    var environment = app.Environment.EnvironmentName;
+    var logger = serviceProvider.GetRequiredService<ILoggerFactory>().CreateLogger(typeof(Program));
+    logger.LogInformation($"Environment: {environment}");
+
 }
 
 app.UseHttpsRedirection();

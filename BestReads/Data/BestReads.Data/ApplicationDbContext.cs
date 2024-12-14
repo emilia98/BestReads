@@ -3,7 +3,6 @@ using BestReads.Data.Configurations;
 using BestReads.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace BestReads.Data
