@@ -1,6 +1,8 @@
 using BestReads.Data;
 using BestReads.Data.Common;
+using BestReads.Data.Common.Repositories;
 using BestReads.Data.Models;
+using BestReads.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +24,9 @@ services.AddIdentity<ApplicationUser, ApplicationRole>(options => IdentityOption
 
 services.AddSingleton(configuration);
 
+
+services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
 services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
 services.AddAuthentication();
