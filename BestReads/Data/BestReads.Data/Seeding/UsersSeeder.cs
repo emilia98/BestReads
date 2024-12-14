@@ -36,7 +36,6 @@ namespace BestReads.Data.Seeding
                 user.NormalizedUserName = user.UserName!.ToUpper();
                 user.NormalizedEmail = user.Email!.ToUpper();
                 user.EmailConfirmed = true;
-                user.CreatedAt = DateTime.UtcNow;
 
                 var result = await userManager.CreateAsync(user, password);
 

@@ -1,7 +1,5 @@
 ﻿using BestReads.Data.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace BestReads.Data.Seeding
 {
@@ -26,15 +24,11 @@ namespace BestReads.Data.Seeding
 
         private static async Task SeedGenreAsync(ApplicationDbContext dbContext, Genre genre)
         {
-            var entity = await dbContext.Genres.FirstOrDefaultAsync(g => g.Tag == genre.Tag);
+            var exists = await dbContext.Genres.AnyAsync(g => g.Tag == genre.Tag);
+            if (exists) return;
 
-            if (entity == null)
-            {
-                genre.CreatedAt = DateTime.UtcNow;
-
-                await dbContext.AddAsync(genre);
-                await dbContext.SaveChangesAsync();
-            }
+            await dbContext.AddAsync(genre);
+            await dbContext.SaveChangesAsync();
         }
     }
 }

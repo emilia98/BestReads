@@ -32,7 +32,6 @@ namespace BestReads.Data.Seeding
             if (entity == null)
             {
                 role.NormalizedName = role.Name!.ToUpper();
-                role.CreatedAt = DateTime.UtcNow;
 
                 var result = await roleManager.CreateAsync(role);
 
