@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BC4A9A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestReads.Helpers", "Common\BestReads.Helpers\BestReads.Helpers.csproj", "{FBFAAC64-5137-40D4-B22F-B557991A485D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6C58E645-B84D-44D3-8752-D6C7BCDEEAA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
