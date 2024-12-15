@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Data\BestReads.Data.Common\BestReads.Data.Common.csproj" />
-  </ItemGroup>
-
 </Project>

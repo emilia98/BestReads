@@ -7,7 +7,7 @@ namespace BestReads.Services.Shared.Contracts
     {
         IEnumerable<T> GetAll<T>(bool? withDeleted = false, int? count = null) where T : class;
 
-        T? GetById<T>(int id, bool? withDeleted = false) where T : class;
+        Task<T?> GetById<T>(int id, bool? withDeleted = false) where T : class;
 
         Task Undelete<T>(T data) where T : class, new();
 
