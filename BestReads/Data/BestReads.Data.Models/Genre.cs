@@ -9,5 +9,7 @@ namespace BestReads.Data.Models
         public string Description { get; set; } = string.Empty;
 
         public string Tag { get; set; }
+
+        public virtual ICollection<BookGenre> BookGenres { get; set; } = new List<BookGenre>();
     }
 }
