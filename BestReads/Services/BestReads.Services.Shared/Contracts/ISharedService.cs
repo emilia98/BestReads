@@ -12,7 +12,7 @@ namespace BestReads.Services.Shared.Contracts
 
         Task Update<T>(T data, int entityId) where T : class, new();
 
-        Task<bool> Delete<T>(T data) where T : class, new();
+        Task<bool> Delete<T>(int id) where T : class, new();
 
         abstract IEnumerable<T> ConvertCollectionToModel<T>(IQueryable<TEntity> query) where T : class;
 
@@ -22,6 +22,6 @@ namespace BestReads.Services.Shared.Contracts
 
         abstract TEntity UpdateEntity<T>(T data, TEntity entity);
 
-        abstract TEntity? GetEntityToDelete<T>(T data);
+        abstract Task<TEntity?> GetEntityToDelete<T>(T data);
     }
 }

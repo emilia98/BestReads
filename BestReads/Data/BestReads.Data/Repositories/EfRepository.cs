@@ -28,8 +28,8 @@ namespace BestReads.Data.Repositories
             var entry = this.DbContext.Entry(entity);
 
             if (entry.State == EntityState.Detached)
-            { this.DbSet.Attach(entity);
-                
+            { 
+                this.DbSet.Attach(entity);
             }
 
             entry.State = EntityState.Modified;

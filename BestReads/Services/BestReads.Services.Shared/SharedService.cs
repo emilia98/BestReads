@@ -22,9 +22,9 @@ namespace BestReads.Services.Shared
             return entity.Id;
         }
 
-        public async Task<bool> Delete<T>(T data) where T : class, new()
+        public async Task<bool> Delete<T>(int id) where T : class, new()
         {
-            var entity = GetEntityToDelete(data);
+            var entity = await GetEntityToDelete(id);
             if (entity == null) return false;
 
             try
@@ -87,6 +87,6 @@ namespace BestReads.Services.Shared
 
         public abstract TEntity UpdateEntity<T>(T data, TEntity entity);
 
-        public abstract TEntity? GetEntityToDelete<T>(T data);
+        public abstract Task<TEntity?> GetEntityToDelete<T>(int id);
     }
 }

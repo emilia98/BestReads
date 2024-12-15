@@ -9,8 +9,8 @@ namespace BestReads.Services.Shared.Contracts
 
         Task<T?> GetById<T>(int id, bool? withDeleted = false) where T : class;
 
-        Task Undelete<T>(T data) where T : class, new();
+        Task Undelete<T>(int id) where T : class, new();
 
-        abstract TEntity GetEntityToUndelete<T>(T data);
+        abstract Task<TEntity?> GetEntityToUndelete<T>(int id);
     }
 }

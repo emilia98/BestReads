@@ -63,13 +63,13 @@ namespace BestReads.Services.Shared
             return ConvertToModel<T>(entity);
         }
 
-        public async Task Undelete<T>(T data) where T : class, new()
+        public async Task Undelete<T>(int id) where T : class, new()
         {
-            var entity = GetEntityToUndelete(data);
+            var entity = GetEntityToUndelete(id).Result;
             Repository.Undelete(entity);
             await Repository.SaveChangesAsync();
         }
 
-        public abstract TEntity GetEntityToUndelete<T>(T data);
+        public abstract Task<TEntity?> GetEntityToUndelete<T>(int id);
     }
 }

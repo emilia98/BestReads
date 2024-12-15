@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BestReads.InputModels\BestReads.InputModels.csproj" />
+    <ProjectReference Include="..\..\Common\BestReads.OutputModels\BestReads.OutputModels.csproj" />
+    <ProjectReference Include="..\..\Data\BestReads.Data\BestReads.Data.csproj" />
+    <ProjectReference Include="..\BestReads.Services.Shared\BestReads.Services.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
