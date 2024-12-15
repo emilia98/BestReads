@@ -1,0 +1,11 @@
+﻿@model GenreListOutputModel
+@{
+}
+
+
+<h1>Genre Controller - List</h1>
+
+@foreach (var genre in Model.Genres)
+{
+	<h2><a asp-controller="Genre" asp-action="Details" asp-route-id="@genre.Id">@genre.Title (@genre.BooksCount)</a></h2>
+}

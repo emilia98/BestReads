@@ -4,10 +4,11 @@ using BestReads.InputModels;
 using BestReads.OutputModels;
 using BestReads.Services.Contracts;
 using BestReads.Services.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace BestReads.Services
 {
-    public class GenreService : DeletableSharedService<Genre>, IGenreService
+	public class GenreService : DeletableSharedService<Genre>, IGenreService
     {
         public GenreService(IDeletableEntityRepository<Genre> repository) : base(repository)
         { }
@@ -57,7 +58,8 @@ namespace BestReads.Services
                     CreatedAt = entity.CreatedAt,
                     ModifiedAt = entity.ModifiedAt,
                     IsDeleted = entity.IsDeleted,
-                    DeletedAt = entity.DeletedAt
+                    DeletedAt = entity.DeletedAt,
+                    BooksCount = entity.BookGenres.Count
                 } as T;
             }
 
@@ -110,5 +112,39 @@ namespace BestReads.Services
 
             return entity;
         }
-    }
+
+        public IEnumerable<T> GetAllWithBooks<T>(bool? withDeleted = false, int? count = null)
+            where T : class
+        {
+			IQueryable<Genre> query;
+            var deletableRepository = (IDeletableEntityRepository<Genre>)_repository;
+
+			if (withDeleted.HasValue && withDeleted.Value == true)
+			{
+				query = deletableRepository.AllWithDeleted();
+			}
+			else
+			{
+				query = deletableRepository.All();
+			}
+
+            query = query.OrderByDescending(x => x.Id);
+
+			if (count.HasValue)
+			{
+				query = query.Take(count.Value);
+			}
+
+			query = query
+				.Include(g => g.BookGenres)
+				.ThenInclude(bg => bg.Book);
+
+			if (typeof(T) == typeof(Genre))
+			{
+				return query.Select(x => (T)(object)x).ToList();
+			}
+
+			return ConvertCollectionToModel<T>(query);
+		}
+	}
 }

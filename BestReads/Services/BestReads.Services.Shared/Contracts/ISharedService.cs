@@ -22,6 +22,6 @@ namespace BestReads.Services.Shared.Contracts
 
         abstract TEntity UpdateEntity<T>(T data, TEntity entity);
 
-        abstract Task<TEntity?> GetEntityToDelete<T>(T data);
+        abstract Task<TEntity?> GetEntityToDelete<T>(int id);
     }
 }

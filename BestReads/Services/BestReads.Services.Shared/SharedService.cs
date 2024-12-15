@@ -24,7 +24,7 @@ namespace BestReads.Services.Shared
 
         public async Task<bool> Delete<T>(int id) where T : class, new()
         {
-            var entity = await GetEntityToDelete(id);
+            var entity = await GetEntityToDelete<T>(id);
             if (entity == null) return false;
 
             try
@@ -43,7 +43,7 @@ namespace BestReads.Services.Shared
         {
             IQueryable<TEntity> query = _repository.All().OrderByDescending(x => x.Id);
 
-            if (count.HasValue)
+			if (count.HasValue)
             {
                 query = query.Take(count.Value);
             }

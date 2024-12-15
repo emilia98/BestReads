@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\BestReads.Data\BestReads.Data.csproj" />
+    <ProjectReference Include="..\..\Services\BestReads.Services\BestReads.Services.csproj" />
   </ItemGroup>
 
 </Project>

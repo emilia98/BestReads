@@ -17,5 +17,7 @@
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedAt { get; set; }
+
+        public int BooksCount { get; set; } = 0;
     }
 }

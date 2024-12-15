@@ -65,7 +65,7 @@ namespace BestReads.Services.Shared
 
         public async Task Undelete<T>(int id) where T : class, new()
         {
-            var entity = GetEntityToUndelete(id).Result;
+            var entity = await GetEntityToUndelete<T>(id);
             Repository.Undelete(entity);
             await Repository.SaveChangesAsync();
         }
