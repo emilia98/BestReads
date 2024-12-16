@@ -23,6 +23,7 @@ services.AddIdentity<ApplicationUser, ApplicationRole>(options => IdentityOption
     .AddRoleManager<RoleManager<ApplicationRole>>()
     .AddSignInManager<SignInManager<ApplicationUser>>()
     .AddRoleValidator<RoleValidator<ApplicationRole>>()
+    .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 services.AddSingleton(configuration);
@@ -33,6 +34,20 @@ services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntit
 services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
 services.AddTransient<IGenreService, GenreService>();
+
+
+services.AddRazorPages()
+    .AddRazorPagesOptions(options =>
+    {
+        options.Conventions.AllowAnonymousToPage("/auth/login");
+    });
+
+services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Auth/Login";
+    options.AccessDeniedPath = "/Auth/AccessDenied";
+});
+//.AddRazorOptions();
 
 services.AddAuthentication();
 services.AddAuthorization();
@@ -87,6 +102,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -12,6 +12,7 @@ namespace BestReads.Data
            // options.Password.RequireNonAlphanumeric = false;
             options.Password.RequiredLength = 8;
             options.SignIn.RequireConfirmedAccount = false;
+            options.SignIn.RequireConfirmedEmail = false;
         }
     }
 }
