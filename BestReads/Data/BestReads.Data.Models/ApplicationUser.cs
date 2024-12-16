@@ -20,6 +20,10 @@ namespace BestReads.Data.Models
         
         public DateTime? DeletedAt { get; set; }
 
+        public int? AuthorId { get; set; } = null;
+
+        public Author? Author { get; set; } = null;
+
         public virtual ICollection<IdentityUserRole<int>> Roles { get; set; }
 
         public virtual ICollection<IdentityUserClaim<int>> Claims { get; set; }

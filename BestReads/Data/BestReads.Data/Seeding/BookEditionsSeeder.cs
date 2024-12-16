@@ -1,4 +1,5 @@
 ﻿using BestReads.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BestReads.Data.Seeding
 {
@@ -30,6 +31,9 @@ namespace BestReads.Data.Seeding
 
 		private static async Task SeedBookEditionAsync(ApplicationDbContext dbContext, BookEdition bookEdition)
 		{
+			var exists = await dbContext.BookEditions.AnyAsync(be => be.ISBN == bookEdition.ISBN);
+			if (exists) return;
+
 			await dbContext.BookEditions.AddAsync(bookEdition);
 			await dbContext.SaveChangesAsync();
 		}
