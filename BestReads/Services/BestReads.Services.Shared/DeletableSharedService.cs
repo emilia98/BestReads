@@ -8,7 +8,7 @@ namespace BestReads.Services.Shared
     public abstract class DeletableSharedService<TEntity> : SharedService<TEntity>, IDeletableSharedService<TEntity>
         where TEntity : BaseDeletableModel<int>
     {
-        private IDeletableEntityRepository<TEntity> Repository => (IDeletableEntityRepository<TEntity>)base._repository;
+        protected IDeletableEntityRepository<TEntity> Repository => (IDeletableEntityRepository<TEntity>)base._repository;
 
         public DeletableSharedService(IDeletableEntityRepository<TEntity> repository)
             : base(repository)

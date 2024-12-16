@@ -34,6 +34,7 @@ services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntit
 services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
 services.AddTransient<IGenreService, GenreService>();
+services.AddTransient<IBookService, BookService>();
 
 
 services.AddRazorPages()
