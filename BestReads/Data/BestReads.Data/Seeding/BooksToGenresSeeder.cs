@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BestReads.Data.Seeding
 {
-    public class BooksGenresSeeder : ISeeder
+    public class BooksToGenresSeeder : ISeeder
     {
         private static ICollection<BookGenre> booksGenres = new List<BookGenre>
         {

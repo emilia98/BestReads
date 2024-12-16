@@ -20,9 +20,10 @@ namespace BestReads.Data.Seeding
                 new UsersToRolesSeeder(),
                 new GenresSeeder(),
                 new BooksSeeder(),
-                new BooksGenresSeeder(),
+                new BooksToGenresSeeder(),
                 new BookEditionsSeeder(),
-                new AuthorsSeeder()
+                new AuthorsSeeder(),
+                new BooksToAuthorsSeeder()
             };
 
             foreach (var seeder in seeders)

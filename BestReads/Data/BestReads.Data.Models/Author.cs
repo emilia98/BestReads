@@ -17,5 +17,7 @@ namespace BestReads.Data.Models
 		public ApplicationUser? User { get; set; } = null;
 
 		// public Nationality Nationality { get; set; }
+
+		public virtual ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();
 	}
 }
