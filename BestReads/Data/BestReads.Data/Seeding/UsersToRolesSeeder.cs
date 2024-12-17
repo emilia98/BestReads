@@ -12,7 +12,9 @@ namespace BestReads.Data.Seeding
             ("admin", GlobalConstants.AdminRole),
             ("user1", GlobalConstants.UserRole),
             ("editor1", GlobalConstants.EditorRole),
-            ("author1", GlobalConstants.AuthorRole)
+            ("author1", GlobalConstants.AuthorRole),
+            ("user2", GlobalConstants.UserRole),
+            ("emito", GlobalConstants.UserRole)
         };
 
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

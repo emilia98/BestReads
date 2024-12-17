@@ -10,6 +10,7 @@ namespace BestReads.Data.Models
             this.Roles = new HashSet<IdentityUserRole<int>>();
             this.Claims = new HashSet<IdentityUserClaim<int>>();
             this.Logins = new HashSet<IdentityUserLogin<int>>();
+            this.BookReviews = new HashSet<BookReview>();
         }
 
         public DateTime CreatedAt { get; set; }
@@ -29,5 +30,7 @@ namespace BestReads.Data.Models
         public virtual ICollection<IdentityUserClaim<int>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<int>> Logins { get; set; }
+
+        public virtual ICollection<BookReview> BookReviews { get; set; }
     }
 }

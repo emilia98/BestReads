@@ -13,5 +13,7 @@ namespace BestReads.Data.Models
         public virtual ICollection<BookEdition> BookEditions { get; set; } = new List<BookEdition>();
 
         public virtual ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();
+
+        public virtual ICollection<BookReview> BookReviews { get; set; } = new List<BookReview>();
     }
 }

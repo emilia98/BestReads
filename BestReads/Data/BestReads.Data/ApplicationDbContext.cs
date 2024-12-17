@@ -34,6 +34,8 @@ namespace BestReads.Data
 
         public DbSet<BookAuthor> BooksAuthors { get; set; }
 
+        public DbSet<BookReview> BookReviews { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -63,6 +65,7 @@ namespace BestReads.Data
             builder.ApplyConfiguration(new BookEditionConfiguration());
             builder.ApplyConfiguration(new AuthorUserConfiguration());
             builder.ApplyConfiguration(new BookAuthorConfiguration());
+            builder.ApplyConfiguration(new BookReviewConfiguration());
             EntityIndexesConfiguration.Configure(builder);
 
             var entityTypes = builder.Model.GetEntityTypes().ToList();

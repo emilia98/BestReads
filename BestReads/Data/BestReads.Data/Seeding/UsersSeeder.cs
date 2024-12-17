@@ -11,7 +11,9 @@ namespace BestReads.Data.Seeding
             (new ApplicationUser() { UserName = "admin", Email = "admin@gmail.com" }, "Admin.1234"),
             (new ApplicationUser() { UserName = "editor1", Email = "editor@gmail.com" }, "Editor.1234"),
             (new ApplicationUser() { UserName = "user1", Email = "user1@gmail.com" }, "User.1234"),
-            (new ApplicationUser() { UserName = "author1", Email = "author1@gmail.com"}, "Author.1234")
+            (new ApplicationUser() { UserName = "author1", Email = "author1@gmail.com"}, "Author.1234"),
+            (new ApplicationUser() { UserName = "user2", Email = "user2@gmail.com" }, "User.1234"),
+            (new ApplicationUser() { UserName = "emito", Email = "emito@gmail.com" }, "Emito.1234"),
         };
 
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

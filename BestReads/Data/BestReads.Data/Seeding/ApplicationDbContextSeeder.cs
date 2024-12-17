@@ -23,7 +23,8 @@ namespace BestReads.Data.Seeding
                 new BooksToGenresSeeder(),
                 new BookEditionsSeeder(),
                 new AuthorsSeeder(),
-                new BooksToAuthorsSeeder()
+                new BooksToAuthorsSeeder(),
+                new BookReviewsSeeder()
             };
 
             foreach (var seeder in seeders)
