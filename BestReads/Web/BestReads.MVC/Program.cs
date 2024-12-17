@@ -38,6 +38,7 @@ services.AddTransient<IBookService, BookService>();
 services.AddTransient<IBookEditionService, BookEditionService>();
 services.AddTransient<IAuthorService, AuthorService>();
 services.AddTransient<IBookReviewService, BookReviewService>();
+services.AddTransient<IUserProfileService, UserProfileService>();
 
 
 services.AddRazorPages()
