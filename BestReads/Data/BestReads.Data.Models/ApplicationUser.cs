@@ -32,5 +32,7 @@ namespace BestReads.Data.Models
         public virtual ICollection<IdentityUserLogin<int>> Logins { get; set; }
 
         public virtual ICollection<BookReview> BookReviews { get; set; }
+
+        public virtual UserProfile UserProfile { get; set; }
     }
 }
