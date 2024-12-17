@@ -36,6 +36,7 @@ services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 services.AddTransient<IGenreService, GenreService>();
 services.AddTransient<IBookService, BookService>();
 services.AddTransient<IBookEditionService, BookEditionService>();
+services.AddTransient<IAuthorService, AuthorService>();
 
 
 services.AddRazorPages()
