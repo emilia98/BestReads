@@ -157,5 +157,12 @@ namespace BestReads.MVC.Controllers
 
             return (user, null);
         }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            // return RedirectToAction("Index", "Home", new { area = "" });
+            return Redirect("/");
+        }
     }
 }
